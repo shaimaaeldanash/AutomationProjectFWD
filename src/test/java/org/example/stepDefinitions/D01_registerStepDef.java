@@ -59,21 +59,21 @@ public class D01_registerStepDef {
         select.selectByVisibleText("1998"); // select by linkText and it should be String */
     }
 
-    @And("user enter email test4@example.com field")
+    @And("user enter email user1@example.com field")
 
     public void personal_details()
     {
-        p01reg.EmailTxt().sendKeys("test4@example.com");
+        p01reg.EmailTxt().sendKeys("user1@example.com");
         //Hooks.driver.findElement(By.id("Email")).sendKeys();
     }
 
-    @And("user fills Password fields Password# ,password#")
+    @And("user fills Password fields P@ssw0rd ,P@ssw0rd")
 
         public void your_password()
 
         {
-            p01reg.passwordTxt().sendKeys("Password#");
-            p01reg.confirmpassTxt().sendKeys("Password#");;
+            p01reg.passwordTxt().sendKeys("P@ssw0rd");
+            p01reg.confirmpassTxt().sendKeys("P@ssw0rd");
             //Hooks.driver.findElement(By.id("Password")).sendKeys();
             //Hooks.driver.findElement(By.id("ConfirmPassword")).sendKeys();
         }

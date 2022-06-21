@@ -65,6 +65,57 @@ public class P03_homePage {
         return Hooks.driver.findElement(By.cssSelector("ul[class=\"top-menu notmobile\"] a[href=\"/desktops\"]"));
     }
 
+    //D06_homeSlidersStepDef
+
+    public WebElement Slider(String sliderNum)
+    {
+        return Hooks.driver.findElement(By.xpath("(//a[@href=\"http://demo.nopcommerce.com/\"])["+sliderNum+"]"));
+    }
+
+   //D07_FollowUsStepDef
+
+    public WebElement FacebookLink()
+    {
+        return Hooks.driver.findElement(By.cssSelector("a[href=\"http://www.facebook.com/nopCommerce\"]"));
+    }
+
+    public WebElement TwitterLink()
+    {
+        return Hooks.driver.findElement(By.cssSelector("a[href=\"https://twitter.com/nopCommerce\"]"));
+    }
+
+    public WebElement rssLink()
+    {
+        return Hooks.driver.findElement(By.cssSelector("a[href=\"/news/rss/1\"]"));
+    }
+
+    public WebElement YoutubeLink()
+    {
+        return Hooks.driver.findElement(By.cssSelector("a[href=\"http://www.youtube.com/user/nopCommerce\"]"));
+    }
+
+    //D08_WishlistStepDef
+
+    public List<WebElement> WishListbuttons()
+    {
+       return Hooks.driver.findElements(By.cssSelector("button[class=\"button-2 add-to-wishlist-button\"]"));
+    }
+
+    public WebElement WishList_successMsg()
+    {
+        return Hooks.driver.findElement(By.cssSelector("div[class=\"bar-notification success\"]"));
+    }
+
+    public WebElement SuccessMessageclose()
+    {
+        return Hooks.driver.findElement(By.cssSelector("span[class=\"close\"]"));
+    }
+
+    public WebElement WishListText()
+    {
+        return Hooks.driver.findElement(By.cssSelector("span[class=\"wishlist-qty\"]"));
+    }
+
 
 
 

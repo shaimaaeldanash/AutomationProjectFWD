@@ -29,22 +29,22 @@ public class P02_login {
         loginPassword().sendKeys(password);
     }
 
-    public WebElement successLoginPOM()
+   /* public WebElement successLoginPom()
     {
         return Hooks.driver.findElement(By.cssSelector("div[class=\"buttons\"] > button[type=\"submit\"]"));
-    }
+    }*/
 
+
+    public WebElement SubmitBtn()
+    {
+        return Hooks.driver.findElement(By.cssSelector("div[class=\"buttons\"] > button[type=\"submit\"]"));
+
+        //button[class="button-1 search-box-button"]
+    }
     public By MyAccount()
     {
         return By.cssSelector("a[class=\"ico-account\"]");
     }
-
-    public WebElement SubmitBtn()
-    {
-        return Hooks.driver.findElement(By.cssSelector("button[class=\"button-1 search-box-button\"]"));
-    }
-
-
 
 
 

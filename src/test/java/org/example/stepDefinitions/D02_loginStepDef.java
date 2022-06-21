@@ -19,10 +19,10 @@ public class D02_loginStepDef {
         login.P02loginPOM().click();
     }
 
-    @When("user login with valid shaimaa.eldanash@gmail.com and P@ssw0rd")
+    @When("user login with valid user1@example.com and P@ssw0rd")
     public void valid_loginemailpass()
     {
-        login.loginEmail().sendKeys("shaimaa.eldanash@gmail.com");
+        login.loginEmail().sendKeys("user1@example.com");
         login.loginPassword().sendKeys("P@ssw0rd");
     }
 
@@ -35,19 +35,37 @@ public class D02_loginStepDef {
     @And("user press on login button")
     public void press_loginBtn() throws InterruptedException {
         login.SubmitBtn().click();
-        Thread.sleep(3000);
+        Thread.sleep(6000);
     }
 
-    @Then("user login to the system successfully")
+    @Then("user login to the account successfully")
+    public void user_login_to_the_account_successfully() {
+        SoftAssert soft = new SoftAssert();
+        //First Assertion
+        soft.assertEquals(Hooks.driver.getCurrentUrl(),"https://demo.nopcommerce.com/", "Assert Equal");
+        //Second Assertion
+        soft.assertTrue(Hooks.driver.findElement(login.MyAccount()).isDisplayed(), "Assert True");
+        soft.assertAll();
+        throw new io.cucumber.java.PendingException();
+    }
+
+    /*@Then("user login to the account successfully")
     public void user_loginsuccessfully()
     {
-        SoftAssert softAssert = new SoftAssert();
-        //First Assertion
+        /*SoftAssert softAssert = new SoftAssert();
+        //1st Assertion
         softAssert.assertEquals(Hooks.driver.getCurrentUrl(), "https://demo.nopcommerce.com/", "Assert Equal");
+        //2nd Assertion
+        softAssert.assertTrue(Hooks.driver.findElement(login.MyAccount()).isDisplayed(), "Assert True");
+        softAssert.assertAll();*/
+
+       /* SoftAssert soft = new SoftAssert();
+        //First Assertion
+        soft.assertEquals(Hooks.driver.getCurrentUrl(),"https://demo.nopcommerce.com/", "Assert Equal");
         //Second Assertion
-//        softAssert.assertTrue(Hooks.driver.findElement(login.MyAccount()).isDisplayed(), "Assert True");
-        softAssert.assertAll();
-    }
+        soft.assertTrue(Hooks.driver.findElement(login.MyAccount()).isDisplayed(), "Assert True");
+        soft.assertAll();
+    }*/
 
     @When("user login with invalid Shaimaa@example.com and P@ssw0rd")
 
@@ -57,7 +75,7 @@ public class D02_loginStepDef {
         Thread.sleep(2000);
     }
 
-    @Then("user could not login to the system")
+    @Then("user could not login to the account")
     public void failed_login() throws InterruptedException {
         Thread.sleep(2000);
         SoftAssert softAssert = new SoftAssert();
