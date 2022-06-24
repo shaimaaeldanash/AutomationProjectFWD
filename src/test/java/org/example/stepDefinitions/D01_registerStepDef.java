@@ -59,11 +59,11 @@ public class D01_registerStepDef {
         select.selectByVisibleText("1998"); // select by linkText and it should be String */
     }
 
-    @And("user enter email user1@example.com field")
+    @And("user enter email user3@example.com field")
 
     public void personal_details()
     {
-        p01reg.EmailTxt().sendKeys("user1@example.com");
+        p01reg.EmailTxt().sendKeys("user3@example.com");
         //Hooks.driver.findElement(By.id("Email")).sendKeys();
     }
 
